@@ -10,26 +10,60 @@
 
 </head>
 <body>
+  <header>
+    <img src="images/logo.svg" alt="logo">
+  </header>
+  <main>
+    <div class="container">
+    
+      <div class="box-1">
+        <label for="bill">
+          Bill
+        </label>
+        <input id="bill" type="number" min="1">
+        
+        <label for="select-tip">
+          Select Tip %
+        </label>
+        <div class="tips">
+            <div class="tip">5%</div>
+            <div class="tip">10%</div>
+            <div class="tip active-tip">15%</div>
+            <div class="tip">25%</div>
+            <div class="tip">50%</div>
+            <input id="costum" placeholder="Costum" min="1" step="0.1">
+        </div>
 
-  Bill
+        <label for="people-count">Number of People</label>
+        <div class="error-msg-people">Can't be zero</div>
+        <input id="people-count" min="1" step="1" placeholder="0" type="number">
+      
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="box-2">
+          <div class="line">
+              <div class="output-inline">
+                <p class="white">Tip Amount</p>
+                <p class="gray">/ person</p>
+              </div>
+              <div class="tip-amount">$</div>
+          </div>
+          
+          <div class="line">
+              <div class="output-inline">
+                <p class="white">Total</p>
+                <p class="gray">/ person</p>
+              </div>
+              <div class="total-amount">$</div>
+          </div>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+          <button id="reset-btn">
+            Reset
+          </button>
+        </div>
+      
+      
+      </div>
+  </main>
 </body>
 </html>

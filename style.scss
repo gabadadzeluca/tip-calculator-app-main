@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --background-green:#C5E4E7;
+    --white: #FFFFFF;
+    --light-gray: #F3F9FA;
+    --grayish-green: #5E7A7D;
+    --gray: #547878;
+    --darker-gray: #7F9D9F;
+    --dark-green: #00474B;
+    --light-green: #26C2AE;
+}
+
+body{
+    font-family: 'Space Mono', monospace;
+    background: var(--background-green);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+* {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 144px;
+}
+main{
+    *{
+        border: none;
+    }
+    input{
+        background-color: var(--light-gray);
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80rem;
+    min-width: 23.4375rem;
+    border-radius: 25px 25px 0px 0px;
+    background-color: var(--white);
+
+    input{
+        border-radius: 5px;
+        text-align: right;
+        font-size: 1.5rem;
+    }
+    label{
+        font-size: 1rem;
+        color: var(--gray);
+        margin-top: 2rem;
+    }
+}
+
+
+.box-1{
+    display: flex;
+    flex-direction: column;
+    /* tips */
+    #bill{
+        background-image: url("images/icon-dollar.svg");
+        background-position: left;
+        background-position-x: 1.125rem;
+        background-repeat: no-repeat;
+    }
+    #people-count{
+        background-image: url("images/icon-person.svg");
+        background-position: left;
+        background-position-x: 1.125rem;
+        background-repeat: no-repeat;
+    }
+    .tips{
+        display: grid;
+        grid-template-rows: repeat(3, 3rem);
+        grid-template-columns: repeat(2, 9.125rem);
+        column-gap: 1rem;
+        row-gap: 1rem;
+        font-size: 1.5rem;
+        *{
+            text-align: center;
+        }    
+        .tip{
+            color: var(--white);
+            background-color: var(--dark-green);
+            border-radius: 0.3125rem;
+            max-width: 9.125rem;
+            max-height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #costum{
+            background-color: var(--light-gray);
+            color: var(--dark-green);
+            text-align: right;
+        }
+        
+    }
+    
+}
+
+
+.box-2{
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    display: flex;
+    flex-direction: column;
+    min-width: 20.4375rem;
+    min-height: 16.0625rem;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 0.9375rem;
+    margin: 2rem 0;
+    .white{
+        color: var(--white);
+        font-size: 1rem;
+    }
+    .gray{
+        color: var(--darker-gray);
+        font-size: 0.8125rem;
+    }
+    #reset-btn{
+        color: var(--dark-green);
+        background-color: var(--light-green);
+        border-radius: 5px;
+        font-size: 1.25rem;
+        height: 3rem;
+        text-transform: uppercase;
+    }
+    .line, button{
+        width: 17.5625rem;
+    }
+    .line{
+        display: inline-flex;
+        justify-content: space-between;
+    }
+    .total-amount, .tip-amount{
+        color: var(--light-green);
+        font-size: 2rem;
+    }
+}
+
+.error-msg-people{
+    display: none;
+}
+
+
