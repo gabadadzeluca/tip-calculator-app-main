@@ -1,3 +1,6 @@
+// Only acceptable input form
+const pattern = '^[0-9]*$';
+
 // selecting tip %
 const tips = document.querySelectorAll('.tip');
 tips.forEach(tip =>{
@@ -41,17 +44,29 @@ costumTip.addEventListener('input', ()=>{
 // Reset btn
 const resetBtn = document.getElementById('reset-btn');
 resetBtn.addEventListener('click', ()=>{
-    //clear out fields !
+    //clear out fields
     tips.forEach(tip =>{
         tip.classList.remove('active-tip');
     })
     inputs.forEach(input =>{
         input.value = '';
     })
+    display(0,0);
+    // set styles 
+    errorMsg.style.display = 'none';
+    numPeople.style.border = '0px ';
     resetBtn.style.backgroundColor = '#0D686D';
 })
 
-
+function checkPeople(){
+    if(numPeople.value.length > 0 && numPeople.value == 0){
+        errorMsg.style.display = 'block';
+        numPeople.style.border = '2px solid #E17052';
+    }else{
+        errorMsg.style.display = 'none';
+        numPeople.style.border = '0px ';
+    }
+}
 
 // Calculate output
 function calculateTip(){
@@ -65,20 +80,11 @@ function calculateTip(){
         tip = parseFloat(costumTip.value);
     }
     //check number of people
-    if(numPeople.value.length > 0 && numPeople.value == 0){
-        errorMsg.style.display = 'block';
-    }else{
-        errorMsg.style.display = 'none';
-    }
+    checkPeople();
 
-    // Only acceptable input form
-    const pattern = '^[0-9]*$';
-    // const inputs = document.querySelectorAll('input[type=number]');
-    // console.log(inputs);
     inputs.forEach(input => {
         if(! input.value.match(pattern)){
-        input.value = '';
-        console.log('yep')
+            input.value = '';
         }
     })
 
@@ -90,13 +96,12 @@ function calculateTip(){
 }
 
 function display(x,y){
-    if(isNaN(x) || isNaN(y)){
-        console.log("NANNNNANN")
-        x = y = '';
-        
+    if(isNaN(parseFloat(x)) || isNaN(parseFloat(y)) ||
+        Math.abs(x) == Infinity || Math.abs(y) == Infinity){
+            x = y = '0';
     }
     const totalTipPerson = document.getElementById('tip-total');
-    totalTipPerson.innerHTML = '$' + x;
+    totalTipPerson.innerHTML = '$' + parseFloat(x).toFixed(2);
     const totalPricePerson = document.getElementById('total');
-    totalPricePerson.innerHTML = '$' +  y;
+    totalPricePerson.innerHTML = '$' +  parseFloat(y).toFixed(2);
 }
