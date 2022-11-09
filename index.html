@@ -17,12 +17,12 @@
     <div class="container">
     
       <div class="box-1">
-        <label for="bill">
+        <label for="bill" class="labels">
           Bill
         </label>
-        <input id="bill" type="number" min="1">
+        <input id="bill" type="number" min="1"placeholder="0">
         
-        <label for="select-tip">
+        <label for="select-tip" class="labels">
           Select Tip %
         </label>
         <div class="tips">
@@ -34,19 +34,23 @@
             <input id="costum" placeholder="Costum" type="number" min="1" step="0.1">
         </div>
 
-        <label for="people-count">Number of People</label>
-        <div class="error-msg-people">Can't be zero</div>
+        <div class="inline">
+          <label for="people-count">Number of People</label>
+          <div class="error-msg-people">Can't be zero</div>
+        </div>
+        
         <input id="people-count" min="1" step="1" placeholder="0" type="number">
       
       </div>
 
       <div class="box-2">
+        <div class="output">
           <div class="line">
               <div class="output-inline">
                 <p class="white">Tip Amount</p>
                 <p class="gray">/ person</p>
               </div>
-              <div class="tip-amount">$</div>
+              <div id="tip-total">$</div>
           </div>
           
           <div class="line">
@@ -54,8 +58,9 @@
                 <p class="white">Total</p>
                 <p class="gray">/ person</p>
               </div>
-              <div class="total-amount">$</div>
+              <div id="total">$</div>
           </div>
+        </div>
 
           <button id="reset-btn">
             Reset
