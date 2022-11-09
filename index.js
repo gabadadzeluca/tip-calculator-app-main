@@ -37,6 +37,10 @@ costumTip.addEventListener('input', ()=>{
     tips.forEach(tip => {
         tip.classList.remove('active-tip');
     });
+    // check that input isn't zero
+    if(parseFloat(costumTip.value) == 0){
+        costumTip.value = ''
+    }
     calculateTip();
 });
 
@@ -44,7 +48,7 @@ costumTip.addEventListener('input', ()=>{
 // Reset btn
 const resetBtn = document.getElementById('reset-btn');
 resetBtn.addEventListener('click', ()=>{
-    //clear out fields
+    //clear out fields`
     tips.forEach(tip =>{
         tip.classList.remove('active-tip');
     })
@@ -54,7 +58,7 @@ resetBtn.addEventListener('click', ()=>{
     display(0,0);
     // set styles 
     errorMsg.style.display = 'none';
-    numPeople.style.border = '0px ';
+    numPeople.style.border = '0px';
     resetBtn.style.backgroundColor = '#0D686D';
 })
 
@@ -64,7 +68,7 @@ function checkPeople(){
         numPeople.style.border = '2px solid #E17052';
     }else{
         errorMsg.style.display = 'none';
-        numPeople.style.border = '0px ';
+        numPeople.style.border = '';
     }
 }
 
