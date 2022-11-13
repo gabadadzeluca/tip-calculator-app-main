@@ -5,7 +5,7 @@ const pattern = '^[0-9]*$';
 const tips = document.querySelectorAll('.tip');
 tips.forEach(tip =>{
     tip.addEventListener('click', function(event){
-        calculateTip();
+        
         tips.forEach(tip => {
             tip.classList.remove('active-tip');
             if(event.target.classList == tip.classList){
@@ -14,6 +14,7 @@ tips.forEach(tip =>{
                 event.target.classList.add('active-tip');
             }
         });
+        calculateTip();
     })
 })
 
